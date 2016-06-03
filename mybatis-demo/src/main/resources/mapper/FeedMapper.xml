@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lsgggg123.springboot.mybatis.dao.mapper.FeedMapper">
+
+	<resultMap id="BaseResultMap" type="com.lsgggg123.springboot.mybatis.domain.Feed" >
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="userId" property="userId" jdbcType="INTEGER" />
+		<result column="userNick" property="userNick" jdbcType="VARCHAR" />
+		<result column="userHead" property="userHead" jdbcType="VARCHAR" />
+		<result column="pics" property="pics" jdbcType="LONGVARCHAR" />
+		<result column="content" property="content" jdbcType="VARCHAR" />
+		<result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
+		<result column="pin" property="pin" jdbcType="TINYINT" />
+		<result column="deleted" property="deleted" jdbcType="TINYINT" />
+	</resultMap>
+
+	<select id="getFeeds" resultMap="BaseResultMap">
+		select * from feed f where f.deleted = 0 and f.pin = 0 and f.userId = #{userId, jdbcType=INTEGER} order by f.publishTime desc limit 10;
+	</select>
+</mapper>
