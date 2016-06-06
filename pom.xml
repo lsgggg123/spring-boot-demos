@@ -19,6 +19,7 @@
         <module>mybatis-demo</module>
         <module>zuul-gateway</module>
         <module>redis-client</module>
+        <module>junit-integeration</module>
     </modules>
 
     <packaging>pom</packaging>
