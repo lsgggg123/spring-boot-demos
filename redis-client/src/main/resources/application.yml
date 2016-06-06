@@ -1,0 +1,18 @@
+redis:
+  max_idle: 1
+  max_total: 10
+  max_wait: 2000
+  testOnBorrow: true
+  clusterServers:
+    - address:  192.168.2.204
+      port: 6390
+    - address:  192.168.2.204
+      port: 6391
+    - address:  192.168.2.204
+      port: 6392
+    - address:  192.168.2.201
+      port: 6390
+    - address:  192.168.2.201
+      port: 6391
+    - address:  192.168.2.201
+      port: 6392

@@ -18,6 +18,7 @@
         <module>quartz-task</module>
         <module>mybatis-demo</module>
         <module>zuul-gateway</module>
+        <module>redis-client</module>
     </modules>
 
     <packaging>pom</packaging>
