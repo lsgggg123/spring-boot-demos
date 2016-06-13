@@ -20,6 +20,7 @@
         <module>zuul-gateway</module>
         <module>redis-client</module>
         <module>junit-integeration</module>
+        <module>pojo-4-use</module>
     </modules>
 
     <packaging>pom</packaging>

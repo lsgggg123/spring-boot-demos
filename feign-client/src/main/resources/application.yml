@@ -1,5 +1,5 @@
 server:
-  context-path: feignclient-clien
+  context-path: /feignclient
   port: 8080
 
 spring:
