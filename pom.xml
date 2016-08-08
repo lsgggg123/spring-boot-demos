@@ -14,7 +14,6 @@
         <module>feign-client</module>
         <module>jsp-swagger</module>
         <module>rabbitmq-listener</module>
-        <module>consul-client</module>
         <module>quartz-task</module>
         <module>mybatis-demo</module>
         <module>zuul-gateway</module>
