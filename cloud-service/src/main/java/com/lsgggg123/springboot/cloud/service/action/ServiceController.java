@@ -30,7 +30,7 @@ public class ServiceController {
     private DiscoveryClient client;
 
 
-    @RequestMapping("/service")
+    @RequestMapping("/service1")
     public String getConfig() {
         long start = System.currentTimeMillis();
         ServiceInstance instance = client.getLocalServiceInstance();
@@ -42,6 +42,21 @@ public class ServiceController {
         }
         long cost = System.currentTimeMillis() - start;
         String service = "Hello World: "+ instance.getServiceId()+":"+instance.getHost()+":"+instance.getPort();
-        return "Remote Hello~ " + username + ":" + password + "@" + url + "---" + cost + " | " + service;
+        return "1 Remote Hello~ " + username + ":" + password + "@" + url + "---" + cost + " | " + service;
+    }
+
+    @RequestMapping("/service2")
+    public String getConfig2() {
+        long start = System.currentTimeMillis();
+        ServiceInstance instance = client.getLocalServiceInstance();
+        // 随机睡眠1000毫秒以内
+        try {
+            Thread.sleep(new Random().nextInt(1000));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        long cost = System.currentTimeMillis() - start;
+        String service = "Hello World: "+ instance.getServiceId()+":"+instance.getHost()+":"+instance.getPort();
+        return "2 Remote Hello~ " + username + ":" + password + "@" + url + "---" + cost + " | " + service;
     }
 }

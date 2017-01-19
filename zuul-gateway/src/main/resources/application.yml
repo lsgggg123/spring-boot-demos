@@ -2,16 +2,6 @@ spring:
   application:
     name: zuul-gateway
 
-zuul:
-  routes:
-    feignclient-client:
-      path: /fc/**
-      url: http://localhost:8080
-
-ribbon:
-  eureka:
-    enabled: false
-
 server:
   port: 8088
 
@@ -23,3 +13,19 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9999/eureka/
+
+#zuul:
+  #routes:
+    #feignclient-client:
+      #path: /fc/**
+      #url: http://localhost:8080
+
+#ribbon:
+  #eureka:
+    #enabled: false
+
+zuul:
+  routes:
+    cloud-service:
+      path: /api/**
+      serviceId: cloud-service

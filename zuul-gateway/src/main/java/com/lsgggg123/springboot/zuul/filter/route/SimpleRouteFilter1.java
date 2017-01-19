@@ -1,17 +1,17 @@
-package com.lsgggg123.springboot.zuul.filter;
+package com.lsgggg123.springboot.zuul.filter.route;
+
+import javax.servlet.http.HttpServletRequest;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 
-import javax.servlet.http.HttpServletRequest;
-
 /**
  * Created by liushun on 16/6/3.
  */
-public class SimpleFilter extends ZuulFilter {
+public class SimpleRouteFilter1 extends ZuulFilter {
     @Override
     public String filterType() {
-        return "pre";
+        return "route";
     }
 
     @Override
@@ -26,6 +26,7 @@ public class SimpleFilter extends ZuulFilter {
 
     @Override
     public Object run() {
+        System.out.println("SimpleRouteFilter1 is running ...");
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         String requestURI = request.getRequestURI();
